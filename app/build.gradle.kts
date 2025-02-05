@@ -22,12 +22,12 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField("String", "BASE_URL", "\"https://fetch-hiring.s3.amazonaws.com/mobile.html/\"")
+            buildConfigField("String", "BASE_URL", "\"https://fetch-hiring.s3.amazonaws.com/\"")
         }
         release {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-            buildConfigField("String", "BASE_URL", "\"https://fetch-hiring.s3.amazonaws.com/mobile.html/\"")
+            buildConfigField("String", "BASE_URL", "\"https://fetch-hiring.s3.amazonaws.com/\"")
         }
     }
     compileOptions {
@@ -67,6 +67,7 @@ dependencies {
     // Dagger/Hilt
     implementation("com.google.dagger:hilt-android:2.51.1")
     kapt("com.google.dagger:hilt-compiler:2.51.1")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
 
     // Retrofit + Gson
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
