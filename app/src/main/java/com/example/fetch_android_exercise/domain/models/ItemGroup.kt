@@ -1,7 +1,6 @@
 package com.example.fetch_android_exercise.domain.models
 
-data class Item(
+data class ItemGroup(
     val id: Int,
-    val listId: Int,
-    val name: String,
+    val items: List<Item>,
 )

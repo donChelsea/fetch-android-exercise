@@ -1,4 +1,4 @@
-package com.example.fetch_android_exercise.data.source.models
+package com.example.fetch_android_exercise.data.source.model
 
 import com.google.gson.annotations.SerializedName
 
