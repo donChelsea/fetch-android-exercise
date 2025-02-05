@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
@@ -12,7 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.fetch_android_exercise.presentation.main.MainViewModel
+import com.example.fetch_android_exercise.presentation.main.ui.MainScreen
 import com.example.fetch_android_exercise.ui.theme.FetchandroidexerciseTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -24,10 +23,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             FetchandroidexerciseTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    MainScreen(modifier = Modifier.padding(innerPadding))
                 }
             }
         }

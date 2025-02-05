@@ -1,7 +1,7 @@
 package com.example.fetch_android_exercise.presentation.main
 
 import androidx.compose.runtime.Immutable
-import com.example.fetch_android_exercise.domain.models.Item
+import com.example.fetch_android_exercise.presentation.models.ItemGroupUiModel
 
 @Immutable
 data class MainUiState(
@@ -28,6 +28,6 @@ sealed class ScreenState {
 
     @Immutable
     data class Data(
-        val items: List<Item> = emptyList(),
+        val items: List<ItemGroupUiModel> = emptyList(),
     ) : ScreenState()
 }
