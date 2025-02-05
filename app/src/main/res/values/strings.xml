@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">fetch-android-exercise</string>
+    <string name="group_header_title">Group %s</string>
 </resources>

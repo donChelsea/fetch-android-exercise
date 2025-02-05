@@ -5,7 +5,7 @@ import com.example.fetch_android_exercise.domain.models.ItemGroup
 import com.example.fetch_android_exercise.presentation.models.ItemGroupUiModel
 import com.example.fetch_android_exercise.presentation.models.ItemUiModel
 
-object ItemGroupUiModelMapper {
+object ItemUiModelMapper {
     fun toUiModel(itemGroup: ItemGroup): ItemGroupUiModel =
         with(itemGroup) {
             ItemGroupUiModel(

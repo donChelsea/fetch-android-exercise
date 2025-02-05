@@ -1,7 +1,7 @@
 package com.example.fetch_android_exercise.presentation.main
 
 import com.example.fetch_android_exercise.common.Resource
-import com.example.fetch_android_exercise.presentation.mapper.ItemGroupUiModelMapper
+import com.example.fetch_android_exercise.presentation.mapper.ItemUiModelMapper
 import com.example.fetch_android_exercise.presentation.usecases.GetItemsUseCase
 import com.example.fetch_android_exercise.presentation.util.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    val getItemsUseCase: GetItemsUseCase,
+    private val getItemsUseCase: GetItemsUseCase
 ) : BaseViewModel<MainUiState, MainUiEvent, MainUiAction>() {
 
     private val _state = MutableStateFlow(MainUiState())
@@ -25,9 +25,7 @@ class MainViewModel @Inject constructor(
         refresh()
     }
 
-    override fun handleAction(action: MainUiAction) {
-
-    }
+    override fun handleAction(action: MainUiAction) {}
 
     private fun refresh() {
         safeLaunch {
@@ -37,7 +35,7 @@ class MainViewModel @Inject constructor(
                     is Resource.Loading -> updateState(ScreenState.Loading)
                     is Resource.Success -> updateState(
                         ScreenState.Data(
-                            items = result.data.orEmpty().map { ItemGroupUiModelMapper.toUiModel(it) }
+                            items = result.data.orEmpty().map { ItemUiModelMapper.toUiModel(it) }
                         )
                     )
                 }

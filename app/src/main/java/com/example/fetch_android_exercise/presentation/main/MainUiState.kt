@@ -9,23 +9,17 @@ data class MainUiState(
 )
 
 @Immutable
-sealed class MainUiEvent {
-//    @Immutable
-//    data class OnMovieClicked(val movieId: Int): HomeUiEvent()
-}
+sealed class MainUiEvent
 
 @Immutable
-sealed class MainUiAction {
-//    @Immutable
-//    data class OnMovieClicked(val movieId: Int): HomeUiAction()
-}
+sealed class MainUiAction
 
 @Immutable
 sealed class ScreenState {
-    object Initial : ScreenState()
-    object Loading : ScreenState()
+    data object Initial : ScreenState()
+    data object Loading : ScreenState()
+    @Immutable
     data class Error(val message: String) : ScreenState()
-
     @Immutable
     data class Data(
         val items: List<ItemGroupUiModel> = emptyList(),
